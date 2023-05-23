@@ -1,18 +1,21 @@
 <!-- App.vue -->
 <template>
   <div id="app">
+    <HeaderComponent />
     <UsuarioComponent />
     <JuegoComponent />
   </div>
 </template>
 
 <script>
-import UsuarioComponent from './Usuario.vue';
-import JuegoComponent from './Juego.vue';
+import HeaderComponent from './components/Header.vue';
+import UsuarioComponent from './components/Usuario.vue';
+import JuegoComponent from './components/Juego.vue';
 
 export default {
   name: 'App',
   components: {
+    HeaderComponent,
     UsuarioComponent,
     JuegoComponent
   }
@@ -25,10 +28,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #b6b6b6;
+  color: #ffffff;
 }
 
 body{
-  background-color: #181619;
+  background-color: #3A3A3A;
 }
 </style>

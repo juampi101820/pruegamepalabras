@@ -2,6 +2,7 @@ package com.juego.juegopalabras.controllers;
 
 import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +14,8 @@ import com.juego.juegopalabras.services.JuegoService;
 @RequestMapping("/juego")
 public class JuegoController {
 
-    private final JuegoService juegoService;
-
-    public JuegoController(JuegoService juegoService) {
-        this.juegoService = juegoService;
-    }
+    @Autowired
+    private JuegoService juegoService;
 
     @PostMapping("/iniciar")
     public JuegoModel iniciarJuego() {

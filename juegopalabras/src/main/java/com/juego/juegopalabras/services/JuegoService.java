@@ -28,6 +28,7 @@ public class JuegoService {
     /* ejecuta la funcion de generar palabrar de acuerdo al nivel actual */
     public void asignarPalabrasPorNivel() {
         int dificultad = juegoActual.getDificultad();
+        // de acuerdo a la dificultad, ejecuta el generarpalabras con una cantidad para recordad y palabras del nivel
         switch (dificultad) {
             case 1:
                 generarPalabras(10, 20);
