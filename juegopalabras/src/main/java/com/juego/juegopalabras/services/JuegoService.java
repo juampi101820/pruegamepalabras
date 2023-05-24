@@ -11,9 +11,11 @@ public class JuegoService {
 
     private final GeneraPalabrasService generaPalabrasService;
     private JuegoModel juegoActual;
+    private final UsuarioService usuarioService; // Nuevo campo
 
-    public JuegoService(GeneraPalabrasService generaPalabrasService) {
+    public JuegoService(GeneraPalabrasService generaPalabrasService, UsuarioService usuarioService) { // Nuevo parámetro
         this.generaPalabrasService = generaPalabrasService;
+        this.usuarioService = usuarioService; // Nueva asignación
     }
 
     /* crea el juego con una dificutal y las palabras, retorna el juego */
@@ -28,7 +30,8 @@ public class JuegoService {
     /* ejecuta la funcion de generar palabrar de acuerdo al nivel actual */
     public void asignarPalabrasPorNivel() {
         int dificultad = juegoActual.getDificultad();
-        // de acuerdo a la dificultad, ejecuta el generarpalabras con una cantidad para recordad y palabras del nivel
+        // de acuerdo a la dificultad, ejecuta el generarpalabras con una cantidad para
+        // recordad y palabras del nivel
         switch (dificultad) {
             case 1:
                 generarPalabras(10, 20);
@@ -76,10 +79,10 @@ public class JuegoService {
 
     /* agregar +1 a la dificultad */
     public JuegoModel Adddificultad() {
-        juegoActual.setDificultad(juegoActual.getDificultad() + 1);
+        int maximoDificultad = juegoActual.getDificultad();
+        juegoActual.setDificultad(maximoDificultad);
+        usuarioService.getUsuarioActual().setDificultad(maximoDificultad);
         return juegoActual;
     }
 
-    
-    
 }

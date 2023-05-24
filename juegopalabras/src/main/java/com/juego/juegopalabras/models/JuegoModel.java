@@ -5,7 +5,8 @@ import java.util.List;
 public class JuegoModel {
 
     /*atributos */
-    private int dificultad;
+    // la dificultad empieza en 1
+    private int dificultad = 1;
     private int puntaje;
     private List<String> palabrasNivel;
     private List<String> palabrasRecordar;

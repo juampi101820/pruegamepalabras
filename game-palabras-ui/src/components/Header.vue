@@ -2,7 +2,7 @@
   <!-- header con el nombre del usuario, nivel y el boton de informacion del juego-->
   <header id="header" class="header-container">
     <h4 class="nameuser">{{ nombre }}</h4>
-    <button type="button" class="btn btn-warning">Informacion</button>
+    <button type="button" class="btn btn-danger">Informacion</button>
   </header>
 </template>
   
